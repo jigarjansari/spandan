@@ -1,0 +1,1243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spandan Homeopathy - Classical Homeopathy By Experts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4a7c59;
+            --secondary: #8fb996;
+            --accent: #f4e285;
+            --light: #f8f9fa;
+            --dark: #343a40;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background-color: #fcfcf7;
+            color: #333;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: -3px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #3d6a4b;
+            border-color: #3d6a4b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 124, 89, 0.3);
+        }
+        
+        .btn-outline-primary {
+            border-color: var(--primary);
+            color: var(--primary);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 124, 89, 0.3);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Cg fill='%234a7c59' fill-opacity='0.1'%3E%3Cpath d='M400 300C400 355.2 355.2 400 300 400C244.8 400 200 355.2 200 300C200 244.8 244.8 200 300 200C355.2 200 400 244.8 400 300ZM600 300C600 355.2 555.2 400 500 400C444.8 400 400 355.2 400 300C400 244.8 444.8 200 500 200C555.2 200 600 244.8 600 300Z'/%3E%3C/g%3E%3C/svg%3E");
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: rgba(143, 185, 150, 0.15);
+            top: -100px;
+            left: -100px;
+            z-index: -1;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: rgba(244, 226, 133, 0.15);
+            bottom: -50px;
+            right: -50px;
+            z-index: -1;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            padding-bottom: 20px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .condition-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            border-bottom: 3px solid transparent;
+            margin-bottom: 20px;
+        }
+        
+        .condition-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .condition-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .condition-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .condition-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+            transition: all 0.3s ease;
+        }
+        
+        .condition-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .condition-list li:hover {
+            transform: translateX(5px);
+            color: var(--primary);
+        }
+        
+        .condition-list li::before {
+            content: "\f058";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        .why-choose {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .why-choose::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: rgba(143, 185, 150, 0.1);
+            top: -150px;
+            right: -150px;
+            z-index: 0;
+        }
+        
+        .why-choose-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .why-choose-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(74, 124, 89, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--primary);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .why-choose-item:hover .why-choose-icon {
+            background-color: var(--primary);
+            color: white;
+            transform: rotateY(180deg);
+        }
+        
+        .why-choose-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .contact-info {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(74, 124, 89, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-form {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-control {
+            border-radius: 10px;
+            padding: 12px 15px;
+            border: 1px solid #e9ecef;
+            margin-bottom: 20px;
+        }
+        
+        .form-control:focus {
+            box-shadow: none;
+            border-color: var(--primary);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        .floating-leaf {
+            position: absolute;
+            opacity: 0.7;
+            z-index: -1;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .scroll-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-to-top:hover {
+            background-color: #3d6a4b;
+            transform: translateY(-5px);
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .stagger-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .hours-table tr {
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .hours-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .hours-table td {
+            padding: 10px 0;
+        }
+        
+        .hours-table td:last-child {
+            text-align: right;
+            font-weight: 500;
+        }
+        
+        .leaf-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30,0 C40,15 50,15 60,30 C50,45 40,45 30,60 C20,45 10,45 0,30 C10,15 20,15 30,0' fill='%234a7c59'/%3E%3C/svg%3E");
+            background-size: 100px 100px;
+        }
+        
+        .badge-new {
+            background-color: var(--accent);
+            color: var(--dark);
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 20px;
+            margin-left: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        .condition-column {
+            margin-bottom: 30px;
+        }
+        
+        .about-img {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-content {
+            padding: 30px;
+        }
+        
+        .about-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Leaves Animation -->
+    <div id="leaves-container"></div>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Spandan Homeopathy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#conditions">Conditions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#why-choose">Why Choose Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <a href="#appointment" class="btn btn-primary ms-lg-4">Book Appointment</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 fade-in">
+                    <h1 class="hero-title">The Classical Homeopathy By Experts</h1>
+                    <p class="hero-subtitle">The Mild, Gentle and Permanent Cure of Your Illness both Mentally as well as Physically</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#appointment" class="btn btn-primary">Book Appointment</a>
+                        <a href="#contact" class="btn btn-outline-primary">Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0 text-center fade-in">
+                    <svg width="400" height="400" viewBox="0 0 600 600" class="pulse">
+                        <g transform="translate(300,300)">
+                            <path d="M0,-200 C50,-150 150,-150 200,0 C150,150 50,150 0,200 C-50,150 -150,150 -200,0 C-150,-150 -50,-150 0,-200 Z" fill="#8fb996" opacity="0.7"></path>
+                            <path d="M0,-150 C40,-110 110,-110 150,0 C110,110 40,110 0,150 C-40,110 -110,110 -150,0 C-110,-110 -40,-110 0,-150 Z" fill="#4a7c59" opacity="0.5"></path>
+                            <path d="M0,-100 C30,-70 70,-70 100,0 C70,70 30,70 0,100 C-30,70 -70,70 -100,0 C-70,-70 -30,-70 0,-100 Z" fill="#f4e285" opacity="0.7"></path>
+                            <circle cx="0" cy="0" r="50" fill="#ffffff"></circle>
+                            <circle cx="0" cy="0" r="30" fill="#4a7c59"></circle>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5" id="about">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0 fade-in">
+                    <div class="about-img">
+                        <svg width="100%" height="400" viewBox="0 0 600 400">
+                            <rect width="600" height="400" fill="#f8f9fa" rx="15" ry="15"></rect>
+                            <g transform="translate(300, 200)">
+                                <circle cx="0" cy="0" r="120" fill="#8fb996" opacity="0.3"></circle>
+                                <circle cx="0" cy="0" r="90" fill="#4a7c59" opacity="0.2"></circle>
+                                <circle cx="0" cy="0" r="60" fill="#f4e285" opacity="0.3"></circle>
+                                
+                                <!-- Plant 1 -->
+                                <g transform="translate(-80, 0)">
+                                    <rect x="-15" y="50" width="30" height="40" fill="#8d6e63" rx="5" ry="5"></rect>
+                                    <path d="M0,50 C-30,20 -20,-20 0,-40 C20,-20 30,20 0,50" fill="#4a7c59"></path>
+                                    <path d="M-15,30 C-40,20 -40,-10 -20,-20 C-10,-10 -5,10 -15,30" fill="#8fb996"></path>
+                                    <path d="M15,30 C40,20 40,-10 20,-20 C10,-10 5,10 15,30" fill="#8fb996"></path>
+                                </g>
+                                
+                                <!-- Plant 2 -->
+                                <g transform="translate(80, 0)">
+                                    <rect x="-15" y="50" width="30" height="40" fill="#8d6e63" rx="5" ry="5"></rect>
+                                    <path d="M0,50 C-30,30 -40,-10 -10,-40 C0,-20 0,0 0,50" fill="#4a7c59"></path>
+                                    <path d="M0,50 C30,30 40,-10 10,-40 C0,-20 0,0 0,50" fill="#8fb996"></path>
+                                </g>
+                                
+                                <!-- Mortar and Pestle -->
+                                <g transform="translate(0, 20)">
+                                    <path d="M-40,-20 C-50,0 -50,30 0,50 C50,30 50,0 40,-20 Z" fill="#e0e0e0" stroke="#bdbdbd" stroke-width="2"></path>
+                                    <rect x="-5" y="-70" width="10" height="80" fill="#bdbdbd" rx="5" ry="5"></rect>
+                                    <circle cx="0" cy="-70" r="15" fill="#bdbdbd"></circle>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <div class="about-content">
+                        <h3>About Spandan Homeopathy</h3>
+                        <p>At Spandan Homeopathy, we provide classical homeopathic treatment by experts. Our approach focuses on treating the whole person, considering physical, emotional, and mental aspects of health.</p>
+                        <p>We offer both online and offline consultations to ensure our healing services are accessible to everyone. Our treatments are mild, gentle, and aim for permanent cure of your illnesses.</p>
+                        <p><strong>Ex Medical officer at Zydus Hospital Ahmedabad</strong></p>
+                        <a href="#appointment" class="btn btn-primary">Book a Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose" id="why-choose">
+        <div class="leaf-bg"></div>
+        <div class="container py-5">
+            <h2 class="text-center section-title fade-in">Why Choose Homeopathy</h2>
+            <div class="row">
+                <div class="col-md-4 stagger-item">
+                    <div class="why-choose-item">
+                        <div class="why-choose-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="why-choose-content">
+                            <h4>Permanent Cure</h4>
+                            <p>Homeopathy aims to provide permanent solutions rather than temporary relief from symptoms.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 stagger-item">
+                    <div class="why-choose-item">
+                        <div class="why-choose-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="why-choose-content">
+                            <h4>Holistic Focus</h4>
+                            <p>Treats the whole person, considering physical, emotional, and mental aspects of health.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 stagger-item">
+                    <div class="why-choose-item">
+                        <div class="why-choose-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="why-choose-content">
+                            <h4>Natural Treatment</h4>
+                            <p>Uses natural substances in low doses, aiming to boost the body's immunity and address the underlying cause of illness.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 stagger-item">
+                    <div class="why-choose-item">
+                        <div class="why-choose-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="why-choose-content">
+                            <h4>Safety</h4>
+                            <p>Generally considered safe due to the low doses and lack of side effects.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 stagger-item">
+                    <div class="why-choose-item">
+                        <div class="why-choose-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="why-choose-content">
+                            <h4>Self-Healing Stimulation</h4>
+                            <p>Homeopathy focuses on treating the whole person, using highly diluted natural substances based on the principle of "like cures like," and aims to stimulate the body's self-healing abilities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conditions Section -->
+    <section class="py-5" id="conditions">
+        <div class="container py-5">
+            <h2 class="text-center section-title fade-in">Conditions We Treat</h2>
+            
+            <div class="row">
+                <!-- Mental Illnesses -->
+                <div class="col-lg-4 col-md-6 condition-column stagger-item">
+                    <div class="condition-card">
+                        <h3 class="condition-title">Mental Illnesses</h3>
+                        <ul class="condition-list">
+                            <li>Anxiety & Stress</li>
+                            <li>Sleeplessness</li>
+                            <li>Lack of Concentration</li>
+                            <li>Night Terrors</li>
+                            <li>Behavior Disorder</li>
+                            <li>Bipolar Disorder</li>
+                            <li>Depression</li>
+                            <li>Post Traumatic Stress Disorder</li>
+                            <li>Schizophrenia</li>
+                            <li>OCD</li>
+                            <li>Fear Psychosis</li>
+                            <li>Anticipatory Anxiety</li>
+                            <li>Panic Disorder</li>
+                            <li>Suicidality</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Pediatric Problems -->
+                <div class="col-lg-4 col-md-6 condition-column stagger-item">
+                    <div class="condition-card">
+                        <h3 class="condition-title">Pediatric Problems</h3>
+                        <ul class="condition-list">
+                            <li>Delayed Learning, Dentition, Talking</li>
+                            <li>Cognitive Delay</li>
+                            <li>Malnutrition</li>
+                            <li>Dentitional Diarrhea</li>
+                            <li>Recurrent Flu</li>
+                            <li>Recurrent Tonsillitis</li>
+                            <li>Respiratory Illness</li>
+                            <li>Otitis Media</li>
+                            <li>ADHD</li>
+                            <li>Autism</li>
+                            <li>Febrile Seizure</li>
+                            <li>Neuromotor Delay</li>
+                            <li>Locomotor Delay</li>
+                            <li>Allergy</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Female Problems -->
+                <div class="col-lg-4 col-md-6 condition-column stagger-item">
+                    <div class="condition-card">
+                        <h3 class="condition-title">Female Problems</h3>
+                        <ul class="condition-list">
+                            <li>Irregular Menses</li>
+                            <li>Dysmenorrhea</li>
+                            <li>PCOD</li>
+                            <li>Recurrent Miscarriage</li>
+                            <li>Breast Nodositis</li>
+                            <li>Mastitis</li>
+                            <li>Pre Menstrual Syndrome</li>
+                            <li>Post Menopausal Syndrome</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Skin Diseases -->
+                <div class="col-lg-4 col-md-6 condition-column stagger-item">
+                    <div class="condition-card">
+                        <h3 class="condition-title">Skin Diseases</h3>
+                        <ul class="condition-list">
+                            <li>Recurrent Acne</li>
+                            <li>Eczema</li>
+                            <li>Psoriasis</li>
+                            <li>Urticaria</li>
+                            <li>Abscess & Recurrent Boil</li>
+                            <li>Vitiligo</li>
+                            <li>Alopecia</li>
+                            <li>Hair Falling</li>
+                            <li>Corns</li>
+                            <li>Lipoma</li>
+                            <li>Burns</li>
+                            <li>Bed Sores</li>
+                            <li>Herpes</li>
+                            <li>Fungal Infection</li>
+                            <li>Dandruff</li>
+                            <li>Scabies</li>
+                            <li>Ulcers</li>
+                            <li>Warts</li>
+                            <li>Dispigmentation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Neurological Diseases -->
+                <div class="col-lg-4 col-md-6 condition-column stagger-item">
+                    <div class="condition-card">
+                        <h3 class="condition-title">Neurological Diseases</h3>
+                        <ul class="condition-list">
+                            <li>Migraine</li>
+                            <li>Headache in General</li>
+                            <li>Tremors</li>
+                            <li>Imbalance</li>
+                            <li>Post Stroke Care</li>
+                            <li>Convulsion</li>
+                            <li>Trauma</li>
+                            <li>Sciatica</li>
+                            <li>Leg Cramps</li>
+                            <li>Ganglion Cyst</li>
+                            <li>Muscles Stiffness</li>
+                            <li>Chronic Backache</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Hormonal Imbalance -->
+                <div class="col-lg-4 col-md-6 condition-column stagger-item">
+                    <div class="condition-card">
+                        <h3 class="condition-title">Hormonal Imbalance</h3>
+                        <ul class="condition-list">
+                            <li>Thyroid Disorder</li>
+                            <li>Diabetes</li>
+                            <li>Obesity</li>
+                            <li>Malnutrition</li>
+                            <li>Infertility</li>
+                            <li>Spermatorrhea</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Eye & ENT Problems -->
+                <div class="col-lg-4 col-md-6 condition-column stagger-item">
+                    <div class="condition-card">
+                        <h3 class="condition-title">Eye & ENT Problems</h3>
+                        <ul class="condition-list">
+                            <li>Stye</li>
+                            <li>Glaucoma</li>
+                            <li>Conjunctivitis</li>
+                            <li>Dry Eye</li>
+                            <li>Allergic Rhinitis</li>
+                            <li>Vertigo & Dizziness</li>
+                            <li>Recurrent Epistaxis</li>
+                            <li>Nasal Polyp</li>
+                            <li>Functional Hearing Loss</li>
+                            <li>Recurrent Sinusitis</li>
+                            <li>Otitis Media</li>
+                            <li>Tinnitus</li>
+                            <li>Recurrent Tonsillitis</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Digestive & Urinary Problems -->
+                <div class="col-lg-4 col-md-6 condition-column stagger-item">
+                    <div class="condition-card">
+                        <h3 class="condition-title">Digestive & Urinary Problems</h3>
+                        <ul class="condition-list">
+                            <li>Chronic Constipation</li>
+                            <li>Indigestion</li>
+                            <li>Food Poisoning</li>
+                            <li>Colic</li>
+                            <li>GERD</li>
+                            <li>Fissure & Fistula</li>
+                            <li>Piles</li>
+                            <li>Heart Burn</li>
+                            <li>Recurrent Diarrhea</li>
+                            <li>IBS</li>
+                            <li>Kidney Stone</li>
+                            <li>Urinary Tract Infection</li>
+                            <li>Pain & Burning Urination</li>
+                            <li>Dribbling of Urine</li>
+                            <li>Bed Wetting</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Other Conditions -->
+                <div class="col-lg-4 col-md-6 condition-column stagger-item">
+                    <div class="condition-card">
+                        <h3 class="condition-title">Other Conditions</h3>
+                        <ul class="condition-list">
+                            <li>Never Being Well Since Previous Illness</li>
+                            <li>Sexual Problems</li>
+                            <li>Palliative Treatment For Bed Ridden Patients</li>
+                            <li>Skin Disease</li>
+                            <li>Asthma</li>
+                            <li>Chronic Constipation</li>
+                            <li>Dental Carries</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="py-5 bg-light" id="appointment">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center fade-in">
+                    <h2 class="section-title">Book Your Consultation</h2>
+                    <p class="mb-5">Take the first step towards natural healing. Schedule a consultation with our experienced homeopathic practitioners.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 fade-in">
+                    <div class="contact-form">
+                        <form id="appointmentForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="tel" class="form-control" placeholder="Your Phone" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="date" class="form-control" required>
+                                </div>
+                            </div>
+                            <textarea class="form-control" rows="5" placeholder="Briefly describe your health concerns"></textarea>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Request Appointment</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5" id="contact">
+        <div class="container py-5">
+            <h2 class="text-center section-title fade-in">Get In Touch</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0 fade-in">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Phone Number</h5>
+                                <p>Dr. Rohit Darji (<b>7698663923</b>)</p>
+                                <p>Dr. Riya Darji (<b>9737915105</b>)</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5>Email Address</h5>
+                                <p>darjirc1999@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h5>Working Hours</h5>
+                                <table class="hours-table">
+                                    <tr>
+                                        <td>Monday</td>
+                                        <td>5 PM To 10 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tuesday</td>
+                                        <td>5 PM To 10 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wednesday</td>
+                                        <td>5 PM To 10 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Thursday</td>
+                                        <td>5 PM To 10 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Friday</td>
+                                        <td>5 PM To 10 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Saturday</td>
+                                        <td>2 PM To 10 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sunday</td>
+                                        <td>9 AM To 12 PM & 4 PM To 10 PM</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Subject">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h3 class="footer-title">Spandan Homeopathy</h3>
+                    <p>The Mild, Gentle and Permanent Cure of Your Illness both Mentally as well as Physically. Online As well As Offline Consultation is available.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#conditions">Conditions We Treat</a></li>
+                        <li><a href="#why-choose">Why Choose Us</a></li>
+                        <li><a href="#appointment">Book Appointment</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone me-2"></i> 7698663923</li>
+                        <li><i class="fas fa-envelope me-2"></i> darjirc1999@gmail.com</li>
+                        <li><i class="fas fa-clock me-2"></i> Mon-Fri: 5 PM - 10 PM</li>
+                        <li><i class="fas fa-clock me-2"></i> Sat: 2 PM - 10 PM</li>
+                        <li><i class="fas fa-clock me-2"></i> Sun: 9 AM - 12 PM & 4 PM - 10 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center copyright">
+                <p>&copy; 2023 Spandan Homeopathy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Scroll to Top Button
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('active');
+            } else {
+                scrollToTopBtn.classList.remove('active');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarCollapse.classList.remove('show');
+                    }
+                }
+            });
+        });
+        
+        // Scroll Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const staggerItems = document.querySelectorAll('.stagger-item');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                const isVisible = (elementTop < window.innerHeight - 100) && (elementBottom > 0);
+                
+                if (isVisible) {
+                    element.classList.add('active');
+                }
+            });
+            
+            staggerItems.forEach((item, index) => {
+                const elementTop = item.getBoundingClientRect().top;
+                const elementBottom = item.getBoundingClientRect().bottom;
+                const isVisible = (elementTop < window.innerHeight - 50) && (elementBottom > 0);
+                
+                if (isVisible) {
+                    setTimeout(() => {
+                        item.classList.add('active');
+                    }, index * 100);
+                }
+            });
+        };
+        
+        // Initial check
+        fadeInOnScroll();
+        
+        // Check on scroll
+        window.addEventListener('scroll', fadeInOnScroll);
+        
+        // Floating Leaves Animation
+        const leavesContainer = document.getElementById('leaves-container');
+        const colors = ['#4a7c59', '#8fb996', '#f4e285'];
+        const leafShapes = [
+            'M0,0 C5,-10 15,-10 20,0 C15,10 5,10 0,0 Z',
+            'M0,0 C8,-8 12,-8 20,0 C12,8 8,8 0,0 Z',
+            'M0,0 C10,-5 10,-15 0,-20 C-10,-15 -10,-5 0,0 Z'
+        ];
+        
+        for (let i = 0; i < 15; i++) {
+            const leaf = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            leaf.setAttribute('class', 'floating-leaf');
+            leaf.setAttribute('width', '30');
+            leaf.setAttribute('height', '30');
+            leaf.setAttribute('viewBox', '0 0 30 30');
+            
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            path.setAttribute('d', leafShapes[Math.floor(Math.random() * leafShapes.length)]);
+            path.setAttribute('fill', colors[Math.floor(Math.random() * colors.length)]);
+            path.setAttribute('transform', 'translate(15, 15)');
+            
+            leaf.appendChild(path);
+            leavesContainer.appendChild(leaf);
+            
+            const size = Math.random() * 20 + 10;
+            leaf.style.width = `${size}px`;
+            leaf.style.height = `${size}px`;
+            
+            leaf.style.left = `${Math.random() * 100}vw`;
+            leaf.style.top = `${Math.random() * 100}vh`;
+            
+            const duration = Math.random() * 20 + 10;
+            const delay = Math.random() * 10;
+            
+            leaf.style.animation = `float ${duration}s ${delay}s infinite linear`;
+        }
+        
+        // Form Submission
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! Your appointment request has been received. We will contact you shortly to confirm.');
+            this.reset();
+        });
+        
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you as soon as possible.');
+            this.reset();
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93a713b985c17f92',t:'MTc0NjM1MjA1MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

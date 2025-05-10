@@ -1,10 +1,10 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name    = htmlspecialchars(trim($_POST["name"]));
-    $email   = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
-    $phone   = htmlspecialchars(trim($_POST["phone"]));
-    $date    = htmlspecialchars(trim($_POST["date"]));
-    $message = htmlspecialchars(trim($_POST["message"]));
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $name    = htmlspecialchars(trim($_GET["name"]));
+    $email   = filter_var($_GET["email"], FILTER_SANITIZE_EMAIL);
+    $phone   = htmlspecialchars(trim($_GET["phone"]));
+    $date    = htmlspecialchars(trim($_GET["date"]));
+    $message = htmlspecialchars(trim($_GET["message"]));
 
     $to      = "jigarjansari1@gmail.com"; // ✅ Your email
     $subject = "New Appointment Request";

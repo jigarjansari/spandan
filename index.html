@@ -1117,7 +1117,7 @@
 
             $.ajax({
                 url: "send_mail.php",
-                type: "POST",
+                type: "GET",
                 data: $(this).serialize(),
                 success: function(response) {
                     alert(response);
